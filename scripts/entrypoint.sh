@@ -3,7 +3,7 @@
 set -e
 set -x
 
-: ${BUILD_CMD:=make}
+: ${MAKE_COMPDB_CMD:="scons compiledb"}
 : ${LISTEN_PORT:=12345}
 
 if [[ -z $PROJECT_PATH ]]; then
@@ -13,7 +13,7 @@ fi
 
 rdm --tcp-port=$LISTEN_PORT &
 cd $PROJECT_PATH
-bear $BUILD_CMD
+$MAKE_COMPDB_CMD
 rc -J .
 
 wait
