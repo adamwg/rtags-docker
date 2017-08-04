@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rtags_version=v2.3
+rtags_version=v2.12
 
 set -e
 
